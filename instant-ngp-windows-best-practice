@@ -1,0 +1,11 @@
+This best practice assumes you have instant-ngp windows version download.
+
+Dataset preparation:
+For image:
+
+For video:
+
+
+Reduce Polygon:
+download instant mesh: https://github.com/wjakob/instant-meshes 
+to reduce polygon of your model.
