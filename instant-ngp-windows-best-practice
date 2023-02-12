@@ -1,11 +1,18 @@
 This best practice assumes you have instant-ngp windows version download.
 
-Dataset preparation:
-For image:
-
-For video:
-
-
-Reduce Polygon:
-download instant mesh: https://github.com/wjakob/instant-meshes 
-to reduce polygon of your model.
+1) cd to the directory that contains instant-ngp.exe.
+2) download opencv 
+-> C:\Users\anaconda3\python.exe -m pip install --upgrade pip
+-> pip install opencv-python
+3) Dataset preparation:
+    For video: basic idea is to use ffmpeg to take frames from the video.
+    cd to video data directory
+    run the following command: 
+    -> python "C:\Users\Documents\instant-ngp\scripts\colmap2nerf.py" --video_in <path of the video> --video_fps <fps> --run_colmap --aabb_scale 16 --overwrite
+    note: --overwrite means it will automatically proceed overwriting without asking you.
+          --fps if you have have 6 sec video, and if fps is 2, it will produce 12 images. It is recommended to choose a frame rate that leads to around 50-150 images.
+          best is to create a folder for your input video path, so that the generated images will be in the same folder with your video.
+          extracted images and transform.json must be in the same folder.
+4) at instant-ngp directory, run instant-ngp <nerf_data_folder_name>
+5) Reduce Polygon:
+    download instant mesh (https://github.com/wjakob/instant-meshes) to reduce polygon of your model.
